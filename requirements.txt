@@ -1,0 +1,4 @@
+open3d==0.15.2
+tqdm==4.61.1
+easydict
+transforms3d

@@ -1,0 +1,32 @@
+DATASET:
+    NAME: ShapeNet55
+    NUM_POINTS: 8192 # total number of points
+    MIS_POINTS: 6144 # number of missing points; Easy = 2048, Med = 4096, Hard = 6144
+NETWORK:
+    NAME: GlanceNet
+
+    COARSE_ENC_NUM_QUERY: [256]
+    COARSE_ENC_DIM: [64]
+    NUM_COARSE_POINTS: 384
+    GLOBAL_FEATS_DIM: 128
+    COARSE_DEC_NUM_QUERY: [384]
+    COARSE_DEC_DIM: [131]
+    FOLD_STEP: 4
+    LOCAL_SELF_ATT: 1
+    LOSS: CDL2
+RANDOM_SEED: 0
+OPTIMIZER:
+    NAME: adamw
+    MAX_EPOCH: 600
+    BATCH_SIZE: 128
+    GRAD_ACCUMULATION: 1
+    GRAD_CLIP: 10
+    LR: 0.0005
+    MIN_LR: 0.0001
+    MOMENTUM: 0.9
+    NESTEROV: True
+    WEIGHT_DECAY: 0.001
+    BETAS: [0.9, 0.999] # For Adam
+    SCHEDULER: cosine_annealing
+    WARM_RESTART_EVERY: 600
+    START_EVAL_AFTER_EPOCH: 400
