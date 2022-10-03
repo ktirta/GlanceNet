@@ -1,4 +1,4 @@
-# PointStack
+# GlanceNet
 
 <p align = 'center'>
 <img src="./docs/overview.png" alt="overview" width="640"/>
